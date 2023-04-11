@@ -1,0 +1,44 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+frontend/node_modules
+frontend/.yarn
+
+# testing
+frontend/coverage
+
+# production
+frontend/build
+
+# misc
+frontend/.DS_Store
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+.eslintcache
+
+frontend/.idea
+frontend/.vscode
+
+frontend/src/styles/tailwind.css
+
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+frontend/.yarn/*
+frontend/!.yarn/patches
+frontend/!.yarn/releases
+frontend/!.yarn/plugins
+frontend/!.yarn/sdks
+frontend/!.yarn/versions
+frontend/.pnp.*
+frontend/.env
+
+
+
+# Backend 
+backend/lib/infrastructure/config/service_account_key_firebase.json
+backend/node_modules
+backend/.env
