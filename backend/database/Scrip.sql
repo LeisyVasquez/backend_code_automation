@@ -1,0 +1,20 @@
+CREATE TABLE general_projects (
+    id SMALLINT NOT NULL UNIQUE,
+    descripcion VARCHAR(100),
+    name VARCHAR(200) NOT NULL UNIQUE,
+    license VARCHAR(4000),
+    name_repository VARCHAR(214) NOT NULL UNIQUE CHECK (name_repository ~ '^[a-z_]+$'),
+    url_repository VARCHAR(1000) NOT NULL CHECK (url_repository ~ '^https?://.+') ,
+    name_branch_repository VARCHAR(255) NOT NULL UNIQUE,
+    name_database VARCHAR(63) NOT NULL UNIQUE CHECK (name_database ~ '^[a-zA-Z_][a-zA-Z0-9_$]*$'),
+    host_database VARCHAR(39) NOT NULL CHECK (host_database ~ '^(\d{1,3}\.){3}\d{1,3}$'),
+    port_database SMALLINT NOT NULL,
+    name_user_dba VARCHAR(63) NOT NULL CHECK (name_user_dba ~ '^[^0-9]\S*$'),
+    password_user_dba VARCHAR(4000) NOT NULL,
+    version_packaje_json VARCHAR(20),
+    name_documentation VARCHAR(200) NOT NULL,
+    version_documentation VARCHAR(20) NOT NULL,
+    created_at DATE NOT NULL,
+    update_at DATE NOT NULL,
+    PRIMARY KEY (id)
+);

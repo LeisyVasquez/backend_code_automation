@@ -2,9 +2,9 @@ const sequelize = require('./sequelize')
 const initModels = require('./models/init-models')
 
 const {
-    public_tests
+    general_projects
 } = initModels(sequelize)
 
 module.exports = {
-    public_tests
+    general_projects
 }

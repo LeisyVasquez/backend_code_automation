@@ -1,12 +1,12 @@
 var DataTypes = require("sequelize").DataTypes;
-var _public_tests = require("./PublicTests");
+var _general_projects = require("./GeneralProjects");
 
 function initModels(sequelize) {
-  var public_tests = _public_tests(sequelize, DataTypes);
+  var general_projects = _general_projects(sequelize, DataTypes);
 
 
   return {
-    public_tests,
+    general_projects,
   };
 }
 module.exports = initModels;

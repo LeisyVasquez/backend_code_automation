@@ -74,7 +74,7 @@ const createServer = async () => {
   // Register custom plugins
   await server.register([
     require('./security'),
-    require('../../interfaces/routes/public_tests')
+    require('../../interfaces/routes/public_general.projects')
   ])
 
   server.app.serviceLocator = require('../config/service_locator')

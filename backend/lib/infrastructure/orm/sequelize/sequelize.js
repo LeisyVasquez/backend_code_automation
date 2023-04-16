@@ -8,7 +8,7 @@ const sequelize = new Sequelize(environment.database.url)
 
 //Se importan todos los modelos
 const modelDefiners = [
-  require('./models/PublicTests')
+  require('./models/GeneralProjects')
  
 ]
 

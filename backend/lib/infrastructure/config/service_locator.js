@@ -4,12 +4,14 @@ const constants = require('./constants')
 const environment = require('./environment')
 //Se importan todos los serializadores
 const PublicTestSerializer = require('../../interfaces/serializers/public_test_serializer')
+const PublicGeneralProjectSerializer = require('../../interfaces/serializers/public_general.projects_serializer')
 
-function buildBeans () {
+function buildBeans() {
   const beans = {
     //Se instancian todos los serializadores    
-    publicTestSerializer: new PublicTestSerializer()
+    PublicGeneralProjectSerializer: new PublicGeneralProjectSerializer()
   }
+  
 
   if (environment.database.dialect === constants.SUPPORTED_DATABASE.IN_MEMORY) {
     //Importación e instancia de otros repositorios con BD diferentes
@@ -22,12 +24,15 @@ function buildBeans () {
   ) {
     //Se importan todos los repositorios correspondientes
     const AccessManager = require('../security/access_manager')
-    const PublicTestRepositoryPsqlOracle = require('../repositories/public_test_repository_psql_oracle')
+    const PublicTestRepositoryPsqlOracle = require('../repositories/')
+    const PublicGeneralProjectsRepositoryPsqlOracle = require('../repositories/public_general.project_repository_psql_oracle')
 
-    
+
+
     //Se instancian todos los repositorios agregandolos al objeto beans
-    beans.accessManager = new AccessManager(), 
-    beans.publicTestRepository = new PublicTestRepositoryPsqlOracle()
+    beans.accessManager = new AccessManager(),
+      beans.publicTestRepository = new PublicTestRepositoryPsqlOracle()
+    beans.publicGeneralProjectsRepository = new PublicGeneralProjectsRepositoryPsqlOracle()
   } else {
     //Importación e instancia de otros repositorios con BD diferentes
   }
