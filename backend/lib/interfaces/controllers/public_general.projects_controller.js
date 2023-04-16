@@ -27,8 +27,8 @@ module.exports = {
       versionPackageJson,
       nameDocumentation,
       versionDocumentation,
-      created_at,
-      updated_at,
+      createdAt,
+      updatedAt,
     } = request.payload;
 
     // Treatment
@@ -48,8 +48,8 @@ module.exports = {
       versionPackageJson,
       nameDocumentation,
       versionDocumentation,
-      created_at,
-      updated_at,
+      createdAt,
+      updatedAt,
       serviceLocator
     );
 
