@@ -22,7 +22,6 @@ module.exports = async (
   updatedAt,
   { publicGeneralProjectsRepository }
 ) => {
-  console.log(publicGeneralProjectsRepository)
   const generalProjects = new GeneralProjects(
     id,
     description,

@@ -3,22 +3,22 @@
 const _serializeGeneralProject = GeneralProject => {
   return {
     id: GeneralProject.id,
-    descripcion: GeneralProject.descripcion,
+    description: GeneralProject.description,
     name: GeneralProject.name,
     license: GeneralProject.license,
-    name_repository: GeneralProject.nameRepository,
-    url_repository: GeneralProject.urlRepository,
-    name_branch_repository: GeneralProject.nameBranchRepository,
-    name_database: GeneralProject.nameDatabase,
-    host_database: GeneralProject.hostDatabase,
-    port_database: GeneralProject.portDatabase,
-    name_user_dba: GeneralProject.nameUserDba,
-    password_user_dba: GeneralProject.passwordUserDba,
-    version_package_json: GeneralProject.versionPackageJson,
-    name_documentation: GeneralProject.nameDocumentation,
-    version_documentation: GeneralProject.versionDocumentation,
-    created_at: GeneralProject.createdAt,
-    updated_at: GeneralProject.updatedAt
+    nameRepository: GeneralProject.name_repository,
+    urlRepository: GeneralProject.url_repository,
+    nameBranchRepository: GeneralProject.name_branch_repository,
+    nameDatabase: GeneralProject.name_database,
+    hostDatabase: GeneralProject.host_database,
+    portDatabase: GeneralProject.port_database,
+    nameUserDba: GeneralProject.name_user_dba,
+    passwordUserDba: GeneralProject.password_user_bba,
+    versionPackageJson: GeneralProject.version_package_json,
+    nameDocumentation: GeneralProject.name_documentation,
+    versionDocumentation: GeneralProject.version_documentation,
+    createdAt: GeneralProject.created_at,
+    updatedAt: GeneralProject.updated_at
   }
 }
 
