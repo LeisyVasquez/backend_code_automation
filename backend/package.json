@@ -19,6 +19,7 @@
     "@hapi/inert": "^7.0.0",
     "@hapi/vision": "^7.0.0",
     "@mapbox/node-pre-gyp": "^1.0.10",
+    "axios": "^1.3.5",
     "blipp": "^4.0.2",
     "crypto-js": "^4.1.1",
     "dotenv": "^16.0.3",
@@ -28,10 +29,11 @@
     "moment-timezone": "^0.5.40",
     "openapi-types": "^12.1.0",
     "pg": "^8.8.0",
+    "redux": "^4.2.1",
     "sequelize": "^6.28.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20", 
+    "nodemon": "^2.0.20",
     "sequelize-auto": "^0.8.8"
   },
   "engines": {

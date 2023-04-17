@@ -22,7 +22,7 @@ module.exports = function(sequelize, DataTypes) {
     timestamps: false,
     indexes: [
       {
-        name: "prueba_pkey",
+        name: "public_tests_pkey",
         unique: true,
         fields: [
           { name: "id" },
