@@ -9,12 +9,26 @@ i18next.addResourceBundle('ar', 'navigation', ar);
 
 const navigationConfig = [
   {
-    id: 'example-component',
-    title: 'Example',
-    translate: 'EXAMPLE',
-    type: 'item',
-    icon: 'heroicons-outline:star',
-    url: 'example',
+    id: 'apps.ecommerce',
+    title: 'ECommerce',
+    type: 'collapse',
+    icon: 'feather:codepen',
+    translate: 'Proyectos',
+    children: [
+      {
+        id: 'e-commerce-products',
+        title: 'Proyectos',
+        type: 'item',
+        url: 'apps/e-commerce/products',
+        end: true,
+      },
+      {
+        id: 'e-commerce-new-product',
+        title: 'Nuevo proyecto',
+        type: 'item',
+        url: 'apps/e-commerce/products/new',
+      }
+    ],
   },
 ];
 
