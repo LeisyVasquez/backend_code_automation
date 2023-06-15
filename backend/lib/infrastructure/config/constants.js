@@ -6,5 +6,6 @@ module.exports = {
     MONGO: 'mongo',
     POSTGRES: 'postgres',
     SQLITE: 'sqlite',
+    ORACLE: 'oracle'
   }
 };
