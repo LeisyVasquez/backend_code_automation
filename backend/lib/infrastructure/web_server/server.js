@@ -74,7 +74,8 @@ const createServer = async () => {
   // Register custom plugins
   await server.register([
     require("./security"),
-    //$1
+    require('../../interfaces/routes/gnr_db_ports'),
+		//$1
   ]);
 
   server.app.serviceLocator = require("../config/service_locator");

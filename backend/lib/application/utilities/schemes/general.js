@@ -36,6 +36,7 @@ module.exports = {
       message: Joi.string().valid('This element cannot be deleted').required()
     }).label(`response_${code}`)
   ),
+  
   responseCannotBeModifiedScheme: (code) => (
     Joi.object({
       statusCode: Joi.number().integer().valid(code).required(),
@@ -44,7 +45,7 @@ module.exports = {
     }).label(`response_${code}`)
   ),
 
-  responseUniqueVioletedScheme: (code) => (
+  responseUniqueViolatedScheme: (code) => (
     Joi.object({
       statusCode: Joi.number().integer().valid(code).required(),
       error: Joi.string().valid('Unknown').required(),
