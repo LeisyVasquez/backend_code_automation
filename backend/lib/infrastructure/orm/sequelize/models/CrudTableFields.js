@@ -62,7 +62,7 @@ module.exports = function(sequelize, DataTypes) {
     tableName: 'crud_table_fields',
     schema: 'crud',
     hasTrigger: true,
-    timestamps: true,
+    timestamps: false,
     indexes: [
       {
         name: "table_fields_pk",

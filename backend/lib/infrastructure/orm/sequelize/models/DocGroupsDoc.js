@@ -20,7 +20,7 @@ module.exports = function(sequelize, DataTypes) {
     tableName: 'doc_groups_doc',
     schema: 'doc',
     hasTrigger: true,
-    timestamps: true,
+    timestamps: false,
     indexes: [
       {
         name: "groups_doc_name_un",

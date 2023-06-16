@@ -37,7 +37,7 @@ module.exports = function(sequelize, DataTypes) {
     tableName: 'doc_services',
     schema: 'doc',
     hasTrigger: true,
-    timestamps: true,
+    timestamps: false,
     indexes: [
       {
         name: "services_pk",

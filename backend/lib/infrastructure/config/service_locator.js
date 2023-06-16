@@ -1,15 +1,15 @@
-'use strict'
+"use strict";
 
-const constants = require('./constants')
-const environment = require('./environment')
+const constants = require("./constants");
+const environment = require("./environment");
 //Se importan todos los serializadores
-const PublicTestSerializer = require('../../interfaces/serializers/public_test_serializer')
+//$1
 
-function buildBeans () {
+function buildBeans() {
   const beans = {
-    //Se instancian todos los serializadores    
-    publicTestSerializer: new PublicTestSerializer()
-  }
+    //Se instancian todos los serializadores
+    //$2
+  };
 
   if (environment.database.dialect === constants.SUPPORTED_DATABASE.IN_MEMORY) {
     //Importación e instancia de otros repositorios con BD diferentes
@@ -21,18 +21,17 @@ function buildBeans () {
     environment.database.dialect === constants.SUPPORTED_DATABASE.POSTGRES
   ) {
     //Se importan todos los repositorios correspondientes
-    const AccessManager = require('../security/access_manager')
-    const PublicTestRepositoryPsqlOracle = require('../repositories/public_test_repository_psql_oracle')
+    const AccessManager = require("../security/access_manager");
+    //$3
 
-    
     //Se instancian todos los repositorios agregandolos al objeto beans
-    beans.accessManager = new AccessManager(), 
-    beans.publicTestRepository = new PublicTestRepositoryPsqlOracle()
+    beans.accessManager = new AccessManager();
+    //$4
   } else {
     //Importación e instancia de otros repositorios con BD diferentes
   }
 
-  return beans
+  return beans;
 }
 
-module.exports = buildBeans()
+module.exports = buildBeans();

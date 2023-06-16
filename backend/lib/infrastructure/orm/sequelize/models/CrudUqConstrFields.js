@@ -55,7 +55,7 @@ module.exports = function(sequelize, DataTypes) {
     tableName: 'crud_uq_constr_fields',
     schema: 'crud',
     hasTrigger: true,
-    timestamps: true,
+    timestamps: false,
     indexes: [
       {
         name: "uq_constr_fields_pk",

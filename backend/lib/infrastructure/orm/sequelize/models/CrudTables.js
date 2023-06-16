@@ -33,7 +33,7 @@ module.exports = function(sequelize, DataTypes) {
     tableName: 'crud_tables',
     schema: 'crud',
     hasTrigger: true,
-    timestamps: true,
+    timestamps: false,
     indexes: [
       {
         name: "tables_pk",
