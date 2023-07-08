@@ -48,39 +48,6 @@ module.exports = {
         },
       },
       {
-        method: "PATCH",
-        path: "/gnr_db_ports/{id}",
-        handler: gnrDbPortsController.update,
-        options: {
-          //auth: 'public',
-          description: "Update db_port",
-          tags: ["api"],
-          validate: {
-            params: Joi.object({
-              id: Joi.number().integer().max(32767).required(),
-            }).label("gnr_db_ports_update_params_patch"),
-            payload: Joi.object({
-              number: Joi.number().integer().min(1).max(65534).required(),
-            }).label("gnr_db_ports_update_payload_patch"),
-          },
-          plugins: {
-            "hapi-swagger": {
-              responses: {
-                200: {
-                  description: "db_port successfully updated",
-                  schema: gnrDbPortsScheme,
-                },
-                432: {
-                  description: "db_port id not found",
-                  schema: responseIdNotFoundScheme(432),
-                },
-                ...fetchGeneralResponseStatusCodes(),
-              },
-            },
-          },
-        },
-      },
-      {
         method: "GET",
         path: "/gnr_db_ports",
         handler: gnrDbPortsController.find,

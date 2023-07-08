@@ -2,7 +2,6 @@
 
 const Boom = require("@hapi/boom");
 const createDbPort = require("../../application/use_cases/init_project/create_db_port");
-const updateDbPort = require("../../application/use_cases/init_project/update_db_port");
 const listDbPort = require("../../application/use_cases/init_project/list_db_port");
 const deleteDbPort = require("../../application/use_cases/init_project/delete_db_port");
 
@@ -28,32 +27,6 @@ module.exports = {
     return h
       .response(serviceLocator.gnrDbPortsSerializer.serialize(dbPort))
       .code(201);
-  },
-
-  async update(request, h) {
-    //Context
-    const serviceLocator = request.server.app.serviceLocator;
-
-    //Input
-    const id = request.params.id;
-    const {number} = request.payload;
-
-    //Treatment
-    const dbPort = await updateDbPort(id, number, serviceLocator);
-
-    //Output
-    if (!dbPort) return new Boom.Boom(undefined, { statusCode: 503 });
-    if (dbPort === 432)
-      return new Boom.Boom("Id not found", { statusCode: 432 });
-    if (dbPort === 484)
-      return new Boom.Boom(
-        "The constraint of a unique field is being violated.",
-        { statusCode: 484 }
-      );
-
-    return h
-      .response(serviceLocator.gnrDbPortsSerializer.serialize(dbPort))
-      .code(200);
   },
 
   async find(request, h) {
