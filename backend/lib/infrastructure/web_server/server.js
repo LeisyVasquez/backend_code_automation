@@ -62,10 +62,11 @@ const createServer = async () => {
         },
         grouping: "tags",
         tags: [
-          // {
-          //   name: 'Auth',
-          //   description: 'Description here'
-          // }
+          {
+            name: "Init project",
+            description:
+              "Services required for automated project initialization",
+          },
         ],
       },
     },
@@ -75,6 +76,7 @@ const createServer = async () => {
   await server.register([
     require("./security"),
     require('../../interfaces/routes/gnr_db_ports'),
+		require('../../interfaces/routes/gnr_db_hosts'),
 		//$1
   ]);
 

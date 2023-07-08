@@ -5,7 +5,7 @@ module.exports = function (sequelize, DataTypes) {
     {
       id: {
         type: DataTypes.SMALLINT,
-        allowNull: false,
+        allowNull: true,
         primaryKey: true,
       },
       url: {
