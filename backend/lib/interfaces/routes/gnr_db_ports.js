@@ -24,7 +24,7 @@ module.exports = {
         options: {
           //auth: 'public',
           description: "Create db_port",
-          tags: ["api"],
+          tags: ["api", "Init project"],
           validate: {
             payload: Joi.object({
               number: Joi.number().integer().min(1).max(65534).required(),
@@ -54,7 +54,7 @@ module.exports = {
         options: {
           //auth: 'public',
           description: "Get db_ports",
-          tags: ["api"],
+          tags: ["api", "Init project"],
           plugins: {
             "hapi-swagger": {
               responses: {
@@ -77,7 +77,7 @@ module.exports = {
         options: {
           //auth: 'public',
           description: "Delete db_port",
-          tags: ["api"],
+          tags: ["api", "Init project"],
           validate: {
             params: Joi.object({
               id: Joi.number().integer().max(32767).required(),
@@ -88,6 +88,10 @@ module.exports = {
               responses: {
                 200: {
                   description: "db_port deleted",
+                },
+                432: {
+                  description: "port id not exist",
+                  schema: responseIdNotFoundScheme(432),
                 },
                 441: {
                   description:
