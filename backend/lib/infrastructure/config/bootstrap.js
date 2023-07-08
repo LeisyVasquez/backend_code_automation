@@ -11,7 +11,7 @@ module.exports = {
     if (environment.database.dialect === constants.SUPPORTED_DATABASE.MONGO) {
       //Config mongo
     }
-    if (environment.database.dialect === constants.SUPPORTED_DATABASE.POSTGRES || environment.database.dialect === constants.SUPPORTED_DATABASE.SQLITE) {
+    if (environment.database.dialect === constants.SUPPORTED_DATABASE.POSTGRES || environment.database.dialect === constants.SUPPORTED_DATABASE.SQLITE || environment.database.dialect === constants.SUPPORTED_DATABASE.ORACLE ) {
       const sequelize = require('../orm/sequelize/sequelize');
       try {
         await sequelize.sync();

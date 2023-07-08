@@ -1,49 +1,49 @@
-'use strict'
+"use strict";
 
-const Hapi = require('@hapi/hapi')
-const Blipp = require('blipp')
-const HapiSwagger = require('hapi-swagger')
+const Hapi = require("@hapi/hapi");
+const Blipp = require("blipp");
+const HapiSwagger = require("hapi-swagger");
 //Complementos de HapiSwagger
-const Inert = require('@hapi/inert')
-const Vision = require('@hapi/vision')
-const Package = require('../../../package.json')
-const fs = require('fs')
+const Inert = require("@hapi/inert");
+const Vision = require("@hapi/vision");
+const Package = require("../../../package.json");
+const fs = require("fs");
 
 const createServer = async () => {
-  let server = {}
+  let server = {};
   let options = {
     port: process.env.PORT || 3000,
     routes: {
       cors: {
-        origin: ['*'],
+        origin: ["*"],
         headers: [
-          'Accept',
-          'Authorization',
-          'Content-Type',
-          'time',
-          'code',
-          'public-signature'
-        ]
-      }
-    }
-  }
-  if (process.env.TRAFFIC_MODE === 'https') {
+          "Accept",
+          "Authorization",
+          "Content-Type",
+          "time",
+          "code",
+          "public-signature",
+        ],
+      },
+    },
+  };
+  if (process.env.TRAFFIC_MODE === "https") {
     // Certificado http
     const tls = {
       // key: fs.readFileSync('/etc/nginx/SSL/dev_drimos.ai.key'),
       // cert: fs.readFileSync('/etc/nginx/SSL/dev_drimos.ai.chained.crt'),
       // passphrase: ''
-    }
+    };
     server = Hapi.server({
       ...options,
-      tls
-    })
+      tls,
+    });
   } else {
-    server = Hapi.server(options)
+    server = Hapi.server(options);
   }
 
   //Se configura prefijo de rutas
-  server.realm.modifiers.route.prefix = '/api'
+  server.realm.modifiers.route.prefix = "/api";
 
   // Register vendors plugins
   await server.register([
@@ -51,35 +51,38 @@ const createServer = async () => {
     Vision,
     {
       plugin: Blipp,
-      options: { showAuth: true }
+      options: { showAuth: true },
     },
     {
       plugin: HapiSwagger,
       options: {
         info: {
-          title: 'Backend Code Automation',
-          version: Package.version
+          title: "Backend Code Automation",
+          version: Package.version,
         },
-        grouping: 'tags',
+        grouping: "tags",
         tags: [
-          // {
-          //   name: 'Auth',
-          //   description: 'Description here'
-          // }
-        ]
-      }
-    }
-  ])
+          {
+            name: "Init project",
+            description:
+              "Services required for automated project initialization",
+          },
+        ],
+      },
+    },
+  ]);
 
   // Register custom plugins
   await server.register([
-    require('./security'),
-    require('../../interfaces/routes/public_tests')
-  ])
+    require("./security"),
+    require('../../interfaces/routes/gnr_db_ports'),
+		require('../../interfaces/routes/gnr_db_hosts'),
+		//$1
+  ]);
 
-  server.app.serviceLocator = require('../config/service_locator')
+  server.app.serviceLocator = require("../config/service_locator");
 
-  return server
-}
+  return server;
+};
 
-module.exports = createServer
+module.exports = createServer;
