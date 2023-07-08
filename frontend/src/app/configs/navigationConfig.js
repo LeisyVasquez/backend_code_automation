@@ -10,8 +10,8 @@ i18next.addResourceBundle('ar', 'navigation', ar);
 const navigationConfig = [
   {
     id: 'example-component',
-    title: 'Example',
-    translate: 'EXAMPLE',
+    title: 'Principal',
+    translate: 'Principal',
     type: 'item',
     icon: 'heroicons-outline:star',
     url: 'example',

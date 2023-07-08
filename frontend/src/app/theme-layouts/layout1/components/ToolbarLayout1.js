@@ -64,7 +64,7 @@ function ToolbarLayout1(props) {
           </div>
 
           <div className="flex items-center px-8 h-full overflow-x-auto">
-            <LanguageSwitcher />
+       
 
             <AdjustFontSize />
 
@@ -76,11 +76,6 @@ function ToolbarLayout1(props) {
               <ChatPanelToggleButton />
             </Hidden>
 
-            <QuickPanelToggleButton />
-
-            <NotificationPanelToggleButton />
-
-            <UserMenu />
           </div>
 
           {config.navbar.display && config.navbar.position === 'right' && (
