@@ -3,7 +3,7 @@ module.exports = function(sequelize, DataTypes) {
   return sequelize.define('crud_constr_uq', {
     id: {
       type: DataTypes.SMALLINT,
-      allowNull: false,
+      allowNull: true,
       primaryKey: true
     },
     name: {
