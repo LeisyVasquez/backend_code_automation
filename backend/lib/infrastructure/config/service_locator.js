@@ -6,6 +6,7 @@ const environment = require("./environment");
 const GnrDbPortsSerializer = require('../../interfaces/serializers/gnr_db_ports_serializer.js')
 const GnrDbHostsSerializer = require('../../interfaces/serializers/gnr_db_hosts_serializer.js')
 const GnrLicensesSerializer = require('../../interfaces/serializers/gnr_licenses_serializer.js')
+const GnrProjectsSerializer = require('../../interfaces/serializers/gnr_projects_serializer.js')
 //$1
 
 function buildBeans() {
@@ -14,7 +15,8 @@ function buildBeans() {
     gnrDbPortsSerializer: new GnrDbPortsSerializer(),
     gnrDbHostsSerializer: new GnrDbHostsSerializer(),
     gnrLicensesSerializer: new GnrLicensesSerializer(),
-    //$2
+    gnrProjectsSerializer: new GnrProjectsSerializer(),
+		//$2
   };
 
   if (environment.database.dialect === constants.SUPPORTED_DATABASE.IN_MEMORY) {
@@ -31,6 +33,7 @@ function buildBeans() {
     const GnrDbPortsRepositoryPostgres = require('../repositories/gnr_db_ports_repository_postgres')
 		const GnrDbHostsRepositoryPostgres = require('../repositories/gnr_db_hosts_repository_postgres')
 		const GnrLicensesRepositoryPostgres = require('../repositories/gnr_licenses_repository_postgres')
+		const GnrProjectsRepositoryPostgres = require('../repositories/gnr_projects_repository_postgres')
 		//$3
 
     //Se crea la instancia de todos los repositorios agregándolos al objeto beans
@@ -38,6 +41,7 @@ function buildBeans() {
     beans.gnrDbPortsRepository = new GnrDbPortsRepositoryPostgres()
 		beans.gnrDbHostsRepository = new GnrDbHostsRepositoryPostgres()
 		beans.gnrLicensesRepository = new GnrLicensesRepositoryPostgres()
+		beans.gnrProjectsRepository = new GnrProjectsRepositoryPostgres()
 		//$4
   } else {
     //Importación e instancia de otros repositorios con BD diferentes

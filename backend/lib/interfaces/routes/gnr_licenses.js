@@ -22,7 +22,7 @@ module.exports = {
         options: {
           //auth: 'public',
           description: "Create license",
-          tags: ["api"],
+          tags: ["api", "Init project"],
           validate: {
             payload: Joi.object({
               content: Joi.string().max(4000).required(),
@@ -48,7 +48,7 @@ module.exports = {
         options: {
           //auth: 'public',
           description: "Get licenses",
-          tags: ["api"],
+          tags: ["api", "Init project"],
           plugins: {
             "hapi-swagger": {
               responses: {
@@ -71,7 +71,7 @@ module.exports = {
         options: {
           //auth: 'public',
           description: "Delete license",
-          tags: ["api"],
+          tags: ["api", "Init project"],
           validate: {
             params: Joi.object({
               id: Joi.number().integer().max(32767).required(),
