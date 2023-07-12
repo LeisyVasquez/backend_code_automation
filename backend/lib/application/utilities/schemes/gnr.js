@@ -5,6 +5,7 @@ module.exports = {
     id: Joi.number().integer().max(32767).required(),
     number: Joi.number().integer().min(1).max(65534).required(),
   }).label("gnr_db_ports"),
+
   gnrDbHostsScheme: Joi.object({
     id: Joi.number().integer().max(32767).required(),
     url: Joi.string()
@@ -17,4 +18,9 @@ module.exports = {
     createdAt: Joi.date().required().description("Es tipo timestamp"),
     updatedAt: Joi.date().required().description("Es tipo timestamp"),
   }).label("gnr_db_hosts"),
+
+  gnrLicenses: Joi.object({
+    id: Joi.number().integer().max(32767).required(),
+    content: Joi.string().max(4000).required(),
+  }).label("gnr_licenses"),
 };
