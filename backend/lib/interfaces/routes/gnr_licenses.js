@@ -7,6 +7,7 @@ const {
 } = require("../../application/utilities/general_functions");
 const {
   responseIdNotFoundScheme,
+  responseCannotBeDeletedScheme,
 } = require("../../application/utilities/schemes/general");
 const { gnrLicenses } = require("../../application/utilities/schemes/gnr");
 
@@ -86,6 +87,11 @@ module.exports = {
                 432: {
                   description: "license id not exist",
                   schema: responseIdNotFoundScheme(432),
+                },
+                441: {
+                  description:
+                    "The license is already associated with a project and therefore cannot be deleted.",
+                  schema: responseCannotBeDeletedScheme(441),
                 },
                 ...fetchGeneralResponseStatusCodes(),
               },

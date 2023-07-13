@@ -54,6 +54,10 @@ module.exports = {
     if (!license) return new Boom.Boom(undefined, { statusCode: 503 });
     if (license === 432)
       return new Boom.Boom("Id not found", { statusCode: 432 });
+    if (license === 441)
+     return new Boom.Boom("This element cannot be deleted.", {
+       statusCode: 441,
+     });
 
     return h.response("license Deleted").code(200);
   },

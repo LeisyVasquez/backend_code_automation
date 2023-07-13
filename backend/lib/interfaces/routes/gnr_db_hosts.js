@@ -8,6 +8,7 @@ const {
 const {
   responseIdNotFoundScheme,
   responseUniqueViolatedScheme,
+  responseCannotBeDeletedScheme,
 } = require("../../application/utilities/schemes/general");
 const { gnrDbHostsScheme } = require("../../application/utilities/schemes/gnr");
 
@@ -98,6 +99,11 @@ module.exports = {
                 432: {
                   description: "host id not exist",
                   schema: responseIdNotFoundScheme(432),
+                },
+                441: {
+                  description:
+                    "The host is already associated with a project and therefore cannot be deleted.",
+                  schema: responseCannotBeDeletedScheme(441),
                 },
                 ...fetchGeneralResponseStatusCodes(),
               },
