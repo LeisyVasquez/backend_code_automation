@@ -90,24 +90,6 @@ module.exports = {
       .code(200);
   },
 
-  async delete(request, h) {
-    // Context
-    const serviceLocator = request.server.app.serviceLocator;
-
-    //Input
-    const { id } = request.params;
-
-    //Treatment
-    const project = await deleteProject(id, serviceLocator);
-
-    //Output
-    if (!project) return new Boom.Boom(undefined, { statusCode: 503 });
-    if (project === 432)
-      return new Boom.Boom("Id not found", { statusCode: 432 });
-
-    return h.response("project Deleted").code(200);
-  },
-
   async get(request, h) {
     //Context
     const serviceLocator = request.server.app.serviceLocator;

@@ -182,36 +182,7 @@ module.exports = {
             },
           },
         },
-      },
-      {
-        method: "DELETE",
-        path: "/gnr_projects/{id}",
-        handler: gnrProjectsController.delete,
-        options: {
-          //auth: 'public',
-          description: "Delete project",
-          tags: ["api", "Init project"],
-          validate: {
-            params: Joi.object({
-              id: Joi.number().integer().max(32767).required(),
-            }).label("gnr_projects_delete_params_delete"),
-          },
-          plugins: {
-            "hapi-swagger": {
-              responses: {
-                200: {
-                  description: "project deleted",
-                },
-                432: {
-                  description: "project id not exist",
-                  schema: responseIdNotFoundScheme(432),
-                },
-                ...fetchGeneralResponseStatusCodes(),
-              },
-            },
-          },
-        },
-      },
+      }
     ]);
   },
 };
