@@ -58,6 +58,10 @@ module.exports = {
     if (!dbHosts) return new Boom.Boom(undefined, { statusCode: 503 });
     if (dbHosts === 432)
       return new Boom.Boom("Id not found", { statusCode: 432 });
+    if (dbHosts === 441)
+      return new Boom.Boom("This element cannot be deleted.", {
+        statusCode: 441,
+      });
 
     return h.response("dbHosts Deleted").code(200);
   },

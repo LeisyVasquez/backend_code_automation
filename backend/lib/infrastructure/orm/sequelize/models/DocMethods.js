@@ -3,7 +3,7 @@ module.exports = function(sequelize, DataTypes) {
   return sequelize.define('doc_methods', {
     id: {
       type: DataTypes.SMALLINT,
-      allowNull: false,
+      allowNull: true,
       primaryKey: true
     },
     name: {

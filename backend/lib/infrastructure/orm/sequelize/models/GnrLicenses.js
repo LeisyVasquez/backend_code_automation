@@ -3,7 +3,7 @@ module.exports = function(sequelize, DataTypes) {
   return sequelize.define('gnr_licenses', {
     id: {
       type: DataTypes.SMALLINT,
-      allowNull: false,
+      allowNull: true,
       primaryKey: true
     },
     content: {

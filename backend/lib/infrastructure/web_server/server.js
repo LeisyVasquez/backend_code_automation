@@ -77,6 +77,8 @@ const createServer = async () => {
     require("./security"),
     require('../../interfaces/routes/gnr_db_ports'),
 		require('../../interfaces/routes/gnr_db_hosts'),
+		require('../../interfaces/routes/gnr_licenses'),
+		require('../../interfaces/routes/gnr_projects'),
 		//$1
   ]);
 
