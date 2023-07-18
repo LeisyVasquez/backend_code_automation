@@ -57,7 +57,27 @@ function NavbarStyle1(props) {
         </StyledNavBar>
       </Hidden>
 
-    </>
+{/* 
+
+      <Hidden lgUp>
+        <StyledNavBarMobile
+          classes={{
+            paper: 'flex-col flex-auto h-full',
+          }}
+          anchor={config.navbar.position}
+          variant="temporary"
+          open={navbar.mobileOpen}
+          onClose={() => dispatch(navbarCloseMobile())}
+          onOpen={() => {}}
+          disableSwipeToOpen
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
+        >
+          <NavbarStyle1Content />
+        </StyledNavBarMobile>
+      </Hidden> */}
+    </>  
   );
 }
 

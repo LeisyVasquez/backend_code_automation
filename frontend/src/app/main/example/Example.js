@@ -23,12 +23,12 @@ function ExamplePage(props) {
     <Root
       header={
         <div className="p-24">
-          <h4>{t('TITLE')}</h4>
+          <h4>{t('TITULO')}</h4>
         </div>
       }
       content={
         <div className="p-24">
-          <h4>Content</h4>
+          <h4>Contenido</h4>
           <br />
           <DemoContent />
         </div>
