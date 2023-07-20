@@ -31,7 +31,7 @@ function ProductHeader(props) {
   }
 
   return (
-    <div className="flex flex-col sm:flex-row flex-1 w-full items-center justify-between space-y-8 sm:space-y-0 py-32 px-24 md:px-32">
+    <div className="flex flex-col sm:flex-row flex-1 w-full items-center  justify-center space-y-8 sm:space-y-0 py-32 px-24 md:px-32">
       <div className="flex flex-col items-center sm:items-start space-y-8 sm:space-y-0 w-full sm:max-w-full min-w-0">
         <motion.div
           initial={{ x: 20, opacity: 0 }}
@@ -72,7 +72,7 @@ function ProductHeader(props) {
                 alt={project}
               />
             )}
-name          </motion.div>
+         </motion.div>
           <motion.div
             className="flex flex-col items-center sm:items-start min-w-0 mx-8 sm:mx-16"
             initial={{ x: -20 }}
@@ -80,9 +80,6 @@ name          </motion.div>
           >
             <Typography className="text-16 sm:text-20 truncate font-semibold">
               {project || 'Nuevo proyecto'}
-            </Typography>
-            <Typography variant="caption" className="font-medium">
-            Por favor deligenciar la siguiente informacion 
             </Typography>
           </motion.div>
         </div>

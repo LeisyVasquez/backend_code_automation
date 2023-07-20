@@ -3,6 +3,7 @@ import FusePageCarded from "@fuse/core/FusePageCarded";
 import { useDeepCompareEffect } from "@fuse/hooks";
 import Button from "@mui/material/Button";
 import Tab from "@mui/material/Tab";
+import Paper from '@mui/material/Paper';
 import Tabs from "@mui/material/Tabs";
 import Typography from "@mui/material/Typography";
 import withReducer from "app/store/withReducer";
@@ -34,7 +35,7 @@ const schema = yup.object().shape({
     .string()
     .required("Debes ingresar un nombre de base de datos")
     .matches(
-      /^[A-Za-z][A-Za-z0-9_]*[^_]$/,
+      /^[a-zA-Z]+(_?[a-zA-Z]+)*$/,
       "El nombre de la base de datos debe comenzar con una letra, no puede contener dígitos, no puede terminar con guión bajo, no puede tener letras con marca diacrítica o letras latinas, y no puede contener caracteres especiales."
     ),
 
@@ -42,7 +43,7 @@ const schema = yup.object().shape({
     .string()
     .required("Debes ingresar un nombre de usuario")
     .matches(
-      /^[A-Za-z][A-Za-z0-9_]*[^_]$/,
+      /^[a-zA-Z]+(_?[a-zA-Z]+)*$/,
       "El nombre de la base de datos debe comenzar con una letra, no puede contener dígitos, no puede terminar con guión bajo, no puede tener letras con marca diacrítica o letras latinas, y no puede contener caracteres especiales."
     ),
   passwordb: yup
@@ -52,7 +53,7 @@ const schema = yup.object().shape({
     .string()
     .required("Debes ingresar un nombre de repositorio")
     .matches(
-      /^[a-z][a-z0-9]*$/,
+      /^[a-zA-Z_][a-zA-Z0-9_]*$/,
       "El nombre del repositorio debe comenzar con una letra minúscula y no puede contener espacios ni caracteres especiales"
     )
     .notOneOf(
@@ -68,7 +69,7 @@ const schema = yup.object().shape({
     .string()
     .required("Debes ingresar una URL de repositorio")
     .matches(
-      /^[a-z0-9\-]+\.git$/,
+      /^https?:\/\/(?:www\.)?github\.com\/.*\.git$/,
       "La URL del repositorio debe terminar con .git y solo puede contener letras minúsculas, números y guiones"
     )
     .test(
@@ -81,9 +82,13 @@ const schema = yup.object().shape({
   nameramarepo: yup
     .string()
     .required("Debes ingresar un nombre de rama de repositorio")
-    .matches(/^\S*$/, "El nombre de la rama no puede contener espacios"),
+    .matches(/^\S+$/, "El nombre de la rama no puede contener espacios"),
   namedoc: yup.string().required("Debes ingresar un nombre de documento"),
-  versiondoc: yup.string().required("Debes ingresar una version de documento"),
+  versiondoc: yup.string().required("Debes ingresar una version de documento")
+  .matches(
+    /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/,
+    "No cumple con los  estandares de semserver"
+  ),
   versionjson: yup
     .string()
     .nullable()
@@ -92,7 +97,7 @@ const schema = yup.object().shape({
       "Si se ingresa una versión, debe seguir el estándar SEM Server (versionamiento semántico)",
       (value) => {
         if (value) {
-          const semverRegex = /^\d+\.\d+\.\d+$/;
+          const semverRegex = /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/;
           return semverRegex.test(value);
         }
         return true;
@@ -208,27 +213,19 @@ function Product(props) {
   }
 
   return (
-    <FormProvider {...methods}>
+    <FormProvider {...methods} >
       <FusePageCarded
         header={<ProductHeader />}
         content={
+          
           <>
-            <Tabs
-              value={tabValue}
-              onChange={handleTabChange}
-              indicatorColor="secondary"
-              textColor="secondary"
-              variant="scrollable"
-              scrollButtons="auto"
-              classes={{ root: "w-full h-64 border-b-1" }}
-            >
-              <Tab className="h-64" label="info" />
-            </Tabs>
-            <div className="p-16 sm:p-24 max-w-3xl">
+            <div className="p-16 sm:p-24 max-w-3xl ">
               <div className={tabValue !== 0 ? "hidden" : ""}>
                 <BasicInfoTab />
               </div>
+            
             </div>
+
           </>
         }
         scroll={isMobile ? "normal" : "content"}

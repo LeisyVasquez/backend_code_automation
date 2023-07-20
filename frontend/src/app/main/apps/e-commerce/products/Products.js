@@ -3,15 +3,16 @@ import withReducer from 'app/store/withReducer';
 import useThemeMediaQuery from '@fuse/hooks/useThemeMediaQuery';
 import reducer from '../store';
 import ProductsHeader from './ProductsHeader';
-import ProductsTable from './ProductsTable';
+import CourseCard from './CourseCard';
 
 function Products() {
   const isMobile = useThemeMediaQuery((theme) => theme.breakpoints.down('lg'));
 
   return (
-    <FusePageCarded
+
+    <FusePageCarded 
       header={<ProductsHeader />}
-      content={<ProductsTable />}
+      content={<CourseCard />}
       scroll={isMobile ? 'normal' : 'content'}
     />
   );

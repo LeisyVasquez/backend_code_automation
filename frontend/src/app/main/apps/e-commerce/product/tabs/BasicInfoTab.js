@@ -1,5 +1,7 @@
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
+import Paper from '@mui/material/Paper';
+import Typography from "@mui/material/Typography";
 import { Controller, useFormContext } from 'react-hook-form';
 
 function BasicInfoTab(props) {
@@ -8,7 +10,16 @@ function BasicInfoTab(props) {
   const { errors } = formState;
 
   return (
-    <div>
+    <div > 
+      <Paper className="mt-20 sm:mt-48 p-24 pb-28 sm:p-10 sm:pb-25 rounded-2xl">
+      <div className="mb-24">
+              <Typography className="text-2xl font-bold tracking-tight">
+               creacion del proyecto
+              </Typography>
+              <Typography color="text.secondary">
+              Por favor deligenciar la siguiente informacion
+              </Typography>
+            </div>
       <Controller
         name="name"
         control={control}
@@ -256,6 +267,7 @@ function BasicInfoTab(props) {
           />
         )}
       />
+      </Paper>
     </div>
   );
 }
