@@ -57,6 +57,8 @@ function NavbarStyle1(props) {
         </StyledNavBar>
       </Hidden>
 
+{/* 
+
       <Hidden lgUp>
         <StyledNavBarMobile
           classes={{
@@ -74,8 +76,8 @@ function NavbarStyle1(props) {
         >
           <NavbarStyle1Content />
         </StyledNavBarMobile>
-      </Hidden>
-    </>
+      </Hidden> */}
+    </>  
   );
 }
 

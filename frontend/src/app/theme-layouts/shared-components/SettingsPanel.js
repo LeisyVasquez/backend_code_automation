@@ -104,7 +104,7 @@ function SettingsPanel() {
   return (
     <>
       <Root id="fuse-settings-schemes" className="buttonWrapper">
-        <Button
+      {/* <Button
           className="settingsButton min-w-40 w-40 h-40 m-0"
           onClick={() => handleOpen('settings')}
           variant="text"
@@ -114,8 +114,7 @@ function SettingsPanel() {
           <span>
             <FuseSvgIcon size={20}>heroicons-solid:cog</FuseSvgIcon>
           </span>
-        </Button>
-
+        </Button> */}
         <Button
           className="min-w-40 w-40 h-40 m-0"
           onClick={() => handleOpen('schemes')}
@@ -178,13 +177,11 @@ function SettingsPanel() {
           </IconButton>
 
           <Typography className="mb-32" variant="h6">
-            Theme Color Schemes
+            Temas 
           </Typography>
 
           <Typography className="mb-24 text-12 italic text-justify" color="text.secondary">
-            * Selected color scheme will be applied to all theme layout elements (navbar, toolbar,
-            etc.). You can also select a different color scheme for each layout element at theme
-            settings.
+            Seleccione el tema que mas te guste.
           </Typography>
 
           <FuseThemeSchemes

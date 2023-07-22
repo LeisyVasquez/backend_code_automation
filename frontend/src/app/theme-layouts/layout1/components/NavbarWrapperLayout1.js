@@ -18,8 +18,8 @@ function NavbarWrapperLayout1(props) {
     <>
       <ThemeProvider theme={navbarTheme}>
         <>
-          {config.navbar.style === 'style-1' && <NavbarStyle1 />}
-          {config.navbar.style === 'style-2' && <NavbarStyle2 />}
+          {config.navbar.style === 'style-1' && <NavbarStyle2 />}
+          {config.navbar.style === 'style-2' && <NavbarStyle1 />}
           {config.navbar.style === 'style-3' && <NavbarStyle3 />}
           {config.navbar.style === 'style-3-dense' && <NavbarStyle3 dense />}
         </>
