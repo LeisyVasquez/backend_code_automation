@@ -6,10 +6,7 @@
     },
     "parser": "@babel/eslint-parser",
     "parserOptions": {
-        "requireConfigFile": false,
-        "babelOptions": {
-             "presets": ["@babel/preset-react"]
-        }
+        "requireConfigFile": false
 },
     "extends": [
         "react-app",
@@ -42,7 +39,6 @@
                 "proseWrap": "always",
                 "quoteProps": "as-needed",
                 "semi": true,
-                "singleQuote": true,
                 "tabWidth": 2,
                 "trailingComma": "es5",
                 "useTabs": false,
