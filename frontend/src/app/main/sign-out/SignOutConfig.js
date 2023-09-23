@@ -1,4 +1,8 @@
+import i18next from "i18next";
+import es from "./i18n/es";
 import SignOutPage from "./SignOutPage";
+
+i18next.addResourceBundle("es", "signIn", es);
 
 const SignOutConfig = {
   settings: {

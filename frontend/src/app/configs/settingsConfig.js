@@ -3,16 +3,40 @@ import i18n from "../../i18n";
 
 const settingsConfig = {
   layout: {
-    style: "layout1", // layout1 layout2 layout3
-    config: {}, // checkout default layout configs at app/theme-layouts for example  app/theme-layouts/layout1/Layout1Config.js
+    style: "layout1",
+    config: {
+      mode: "container",
+      containerWidth: 1570,
+      navbar: {
+        display: true,
+        style: "style-2",
+        folded: true,
+        position: "left",
+      },
+      toolbar: {
+        display: true,
+        style: "fixed",
+        position: "below",
+      },
+      footer: {
+        display: false,
+        style: "fixed",
+      },
+      leftSidePanel: {
+        display: true,
+      },
+      rightSidePanel: {
+        display: true,
+      },
+    },
   },
   customScrollbars: true,
   direction: i18n.dir(i18n.options.lng) || "ltr", // rtl, ltr
   theme: {
-    main: themesConfig.default,
-    navbar: themesConfig.defaultDark,
-    toolbar: themesConfig.default,
-    footer: themesConfig.defaultDark,
+    main: themesConfig.default1,
+    navbar: themesConfig.default1,
+    toolbar: themesConfig.default1,
+    footer: themesConfig.default1,
   },
   /*
    To make whole app auth protected by default set defaultAuth:['admin','staff','user']

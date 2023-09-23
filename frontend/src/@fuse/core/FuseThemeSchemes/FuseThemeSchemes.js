@@ -40,7 +40,7 @@ function SchemePreview({ theme, className, id, onSelect }) {
             color: primaryColorContrast,
           }}
         >
-          <span className="text-12 opacity-75">Header (Primary)</span>
+          {/* <span className="text-12 opacity-75">Header (Primary)</span> */}
 
           <div
             className="flex items-center justify-center w-20 h-20 rounded-full absolute bottom-0 right-0 -mb-10 shadow text-10 mr-4"
@@ -60,15 +60,15 @@ function SchemePreview({ theme, className, id, onSelect }) {
               color: paperColorContrast,
             }}
           >
-            <span className="text-12 opacity-75">Paper</span>
+            {/* <span className="text-12 opacity-75">Paper</span> */}
           </div>
         </div>
 
         <div className="px-8 py-8 w-full">
-          <span className="text-12 opacity-75">Background</span>
+          {/* <span className="text-12 opacity-75">Background</span> */}
         </div>
       </button>
-      <Typography className="font-semibold w-full text-center mt-12">{id}</Typography>
+      {/* <Typography className="font-semibold w-full text-center mt-12">{id}</Typography> */}
     </div>
   );
 }

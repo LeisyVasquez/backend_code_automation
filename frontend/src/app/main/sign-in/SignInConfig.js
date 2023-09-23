@@ -1,5 +1,9 @@
+import i18next from "i18next";
+import es from "./i18n/es";
 import SignInPage from "./SignInPage";
 import authRoles from "../../auth/authRoles";
+
+i18next.addResourceBundle("es", "signIn", es);
 
 const SignInConfig = {
   settings: {
