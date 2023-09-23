@@ -11,10 +11,7 @@ import ExampleConfig from "../main/example/ExampleConfig";
 const routeConfigs = [ExampleConfig, SignOutConfig, SignInConfig, SignUpConfig];
 
 const routes = [
-  ...FuseUtils.generateRoutesFromConfigs(
-    routeConfigs,
-    settingsConfig.defaultAuth
-  ),
+  ...FuseUtils.generateRoutesFromConfigs(routeConfigs, settingsConfig.defaultAuth),
   {
     path: "/",
     element: <Navigate to="/example" />,

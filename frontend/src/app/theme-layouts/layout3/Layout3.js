@@ -20,8 +20,7 @@ const Root = styled("div")(({ theme, config }) => ({
     clipPath: "inset(0)",
     maxWidth: `${config.containerWidth}px`,
     margin: "0 auto",
-    boxShadow:
-      "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+    boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
   }),
   ...(config.mode === "container" && {
     "& .container": {
@@ -41,15 +40,10 @@ function Layout3(props) {
       {config.leftSidePanel.display && <LeftSideLayout3 />}
 
       <div className="flex flex-col flex-auto min-w-0">
-        <main
-          id="fuse-main"
-          className="flex flex-col flex-auto min-h-full min-w-0 relative"
-        >
+        <main id="fuse-main" className="flex flex-col flex-auto min-h-full min-w-0 relative">
           {config.navbar.display && (
             <NavbarWrapperLayout3
-              className={clsx(
-                config.navbar.style === "fixed" && "sticky top-0 z-50"
-              )}
+              className={clsx(config.navbar.style === "fixed" && "sticky top-0 z-50")}
             />
           )}
 
@@ -75,9 +69,7 @@ function Layout3(props) {
           </div>
 
           {config.footer.display && (
-            <FooterLayout3
-              className={config.footer.style === "fixed" && "sticky bottom-0"}
-            />
+            <FooterLayout3 className={config.footer.style === "fixed" && "sticky bottom-0"} />
           )}
         </main>
       </div>
